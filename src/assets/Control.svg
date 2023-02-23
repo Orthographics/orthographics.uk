@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 177.64">
+    <defs>
+        <style>.cls-1{stroke-width:6px;}.cls-1,.cls-2{fill:#fff;}.cls-1,.cls-2,.cls-3,.cls-4{stroke:#000;stroke-linecap:round;stroke-linejoin:round;}.cls-2,.cls-4{stroke-width:12px;}.cls-3{fill:none;stroke-width:8px;}.cls-4{fill:#6A4692;}</style>
+    </defs>
+    <g id="Layer_1-2">
+        <polygon class="cls-4" points="154 150.86 30.45 129.55 30.45 6 154 27.3 154 150.86"/>
+        <polygon class="cls-2" points="129.55 171.64 6 150.34 6 26.78 129.55 48.09 129.55 171.64"/>
+        <line class="cls-3" x1="32.86" y1="136.92" x2="32.86" y2="48.92"/>
+        <line class="cls-3" x1="67.78" y1="143.31" x2="67.78" y2="55.31"/>
+        <ellipse class="cls-1" cx="32.49" cy="86.87" rx="9.31" ry="11.06" transform="translate(-50.18 44.82) rotate(-42.54)"/>
+        <ellipse class="cls-1" cx="67.78" cy="118.23" rx="9.31" ry="11.06" transform="translate(-62.09 76.93) rotate(-42.54)"/>
+        <line class="cls-3" x1="102.69" y1="150.85" x2="102.69" y2="62.86"/>
+        <ellipse class="cls-1" cx="103.07" cy="84.52" rx="9.31" ry="11.06" transform="translate(-30.02 91.92) rotate(-42.54)"/>
+    </g>
+</svg>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148.44 162.94">
+    <defs>
+        <style>.cls-1{fill:#fff;}.cls-1,.cls-2,.cls-3{stroke:#000;}.cls-1,.cls-3{stroke-miterlimit:10;stroke-width:12px;}.cls-2{stroke-linejoin:round;stroke-width:10px;}.cls-2,.cls-3{fill:#6a4692;}</style>
+    </defs>
+    <g id="Layer_1-2">
+        <path class="cls-3" d="m134.92,71.68L69.75,12.1C54.93-1.46,31.07,9.06,31.07,29.14v92.99c0,17.27,18.26,28.43,33.63,20.55l65.17-33.41c14.33-7.35,16.94-26.74,5.05-37.6Z"/>
+        <path class="cls-1" d="m109.85,83.35L44.68,23.77C29.86,10.22,6,20.73,6,40.82v92.99c0,17.27,18.26,28.43,33.63,20.55l65.17-33.41c14.33-7.35,16.94-26.74,5.05-37.6Z"/>
+        <polygon class="cls-2" points="75.82 94.03 35.29 56.97 35.29 114.8 75.82 94.03"/>
+    </g>
+</svg>
