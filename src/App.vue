@@ -2,27 +2,29 @@
     <Background />
     <Header />
 
-    <div class="lg:w-[1000px] w-full m-auto mt-[100px]">
-        <h1 class="font-display text-center leading-2">
-            <span class="lg:text-[40pt] text-[28pt]"
-                >Complete real-time graphics solutions</span
-            >
-            <span class="lg:text-[36pt] text-[22pt]"
-                ><br />for live and offline productions</span
-            >
-        </h1>
+    <div class="lg:w-[1000px] w-full m-auto">
+        <div class="mt-[150px] mb-[50px]">
+            <h1 class="font-display text-center leading-2">
+                <span class="lg:text-[40pt] text-[28pt]"
+                    >Complete real-time graphics solutions</span
+                >
+                <span class="lg:text-[36pt] text-[22pt]"
+                    ><br />for live and offline productions</span
+                >
+            </h1>
 
-        <h1 class="text-center lg:text-2xl text-xl font-display mt-2">
-            Stream Overlays
-            <span class="text-orthopurple">•</span>
-            Esports Tournaments
-            <span class="text-orthopurple">•</span>
-            Game Shows
-            <span class="text-orthopurple">•</span>
-            Live TV
-        </h1>
+            <h1 class="text-center lg:text-3xl text-2xl font-display mt-2">
+                Stream Overlays
+                <span class="text-orthopurple">•</span>
+                Esports Tournaments
+                <span class="text-orthopurple">•</span>
+                Game Shows
+                <span class="text-orthopurple">•</span>
+                Live TV
+            </h1>
+        </div>
 
-        <div class="w-full space-y-6 py-10">
+        <div class="w-full space-y-6">
             <div
                 class="flex justify-between mx-10 p-4 align-baseline gap-4 group"
             >
