@@ -8,8 +8,8 @@ module.exports = {
             },
         },
         fontFamily: {
-            display: ['Rubik'],
-            body: ['Campaign'],
+            display: ['Rubik', 'sans-serif'],
+            body: ['Campaign', 'sans-serif'],
         },
     },
     plugins: [],
