@@ -1,17 +1,19 @@
 <template>
-    <canvas ref="canvas" class="fixed top-0 left-0 -z-50"></canvas>
+    <canvas
+        ref="canvas"
+        class="absolute top-0 left-0 -z-50 h-full w-full"
+    ></canvas>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useMouse, useWindowSize, useScroll } from '@vueuse/core'
+import { useMouse, useWindowSize } from '@vueuse/core'
 
 const canvas = ref<HTMLCanvasElement>()
 let ctx: CanvasRenderingContext2D | null
 
-const { width, height } = useWindowSize()
-const { x: mouseX, y: mouseY } = useMouse({ type: 'client' })
-const { y: scrollY } = useScroll(window)
+const { width } = useWindowSize()
+const { x: mouseX, y: mouseY, sourceType } = useMouse({ type: 'page' })
 
 const GAP = 50
 const RAD = 3
@@ -26,15 +28,15 @@ function smoothstep(k: number) {
 function draw() {
     if (!canvas.value) return
 
-    canvas.value.width = width.value
-    canvas.value.height = height.value
+    canvas.value.width = canvas.value.offsetWidth
+    canvas.value.height = canvas.value.offsetHeight + 50
 
     ctx = canvas.value.getContext('2d')
     if (!ctx) return
 
     ctx.fillStyle = '#6a469222'
 
-    for (let i = 0; i < height.value / GAP; i++) {
+    for (let i = 0; i < canvas.value.height / GAP; i++) {
         const cY = (i + 0.5) * GAP // - (scrollY.value % GAP)
 
         for (let j = 0; j < width.value / GAP; j++) {
@@ -45,10 +47,12 @@ function draw() {
             )
 
             const size =
-                RAD *
-                (1 +
-                    (MOUSE_WEIGHT - 1) *
-                        (1 - smoothstep(mouseDist / MOUSE_RANGE)))
+                sourceType.value === 'mouse'
+                    ? RAD *
+                      (1 +
+                          (MOUSE_WEIGHT - 1) *
+                              (1 - smoothstep(mouseDist / MOUSE_RANGE)))
+                    : RAD
 
             ctx.beginPath()
             ctx.ellipse(cX, cY, size, size, 0, 0, 2 * Math.PI)

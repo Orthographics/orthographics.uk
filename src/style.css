@@ -4,10 +4,15 @@
 
 html::-webkit-scrollbar-track {
     background-color: #000;
+    margin-top: 86px;
+    border-top-color: rgb(106 70 146);
+    border-top-width: 4px;
+    border-top-style: solid;
 }
 
 html::-webkit-scrollbar {
-    width: 12px;
+    width: 8px;
+
     background-color: #000;
 }
 
