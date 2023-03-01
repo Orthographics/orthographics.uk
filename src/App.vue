@@ -116,7 +116,7 @@
                     class="rounded-full overflow-hidden m-auto max-w-[250px] border-orthopurple border-opacity-70 border-2"
                 >
                     <img
-                        class="scale-150 grayscale-[20%]"
+                        class="scale-[200%] -translate-x-[20px] grayscale-[15%]"
                         src="./assets/tom.jpg"
                     />
                 </div>
