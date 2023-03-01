@@ -12,5 +12,5 @@ module.exports = {
             body: ['Campaign', 'sans-serif'],
         },
     },
-    plugins: [],
+    plugins: [require('@tailwindcss/forms')],
 }

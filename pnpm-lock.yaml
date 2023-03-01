@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@tailwindcss/forms': ^0.5.3
   '@vitejs/plugin-vue': ^4.0.0
   '@vueuse/core': ^9.12.0
   autoprefixer: ^10.4.13
@@ -15,6 +16,7 @@ dependencies:
   vue: 3.2.45
 
 devDependencies:
+  '@tailwindcss/forms': 0.5.3_tailwindcss@3.2.6
   '@vitejs/plugin-vue': 4.0.0_vite@4.0.4+vue@3.2.45
   '@vueuse/core': 9.12.0_vue@3.2.45
   autoprefixer: 10.4.13_postcss@8.4.21
@@ -266,6 +268,15 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.15.0
+    dev: true
+
+  /@tailwindcss/forms/0.5.3_tailwindcss@3.2.6:
+    resolution: {integrity: sha512-y5mb86JUoiUgBjY/o6FJSFZSEttfb3Q5gllE4xoKjAAD+vBrnIhE4dViwUuow3va8mpH4s9jyUbUbrRGoRdc2Q==}
+    peerDependencies:
+      tailwindcss: '>=3.0.0 || >= 3.0.0-alpha.1'
+    dependencies:
+      mini-svg-data-uri: 1.4.4
+      tailwindcss: 3.2.6_postcss@8.4.21
     dev: true
 
   /@types/web-bluetooth/0.0.16:
@@ -722,6 +733,11 @@ packages:
     dependencies:
       braces: 3.0.2
       picomatch: 2.3.1
+    dev: true
+
+  /mini-svg-data-uri/1.4.4:
+    resolution: {integrity: sha512-r9deDe9p5FJUPZAk3A59wGH7Ii9YrjjWw0jmw/liSbHl2CHiyXj6FcDXDu2K3TjVAXqiJdaw3xxwlZZr9E6nHg==}
+    hasBin: true
     dev: true
 
   /minimatch/5.1.6:
