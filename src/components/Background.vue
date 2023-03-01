@@ -18,11 +18,11 @@ const { x: mouseX, y: mouseY, sourceType } = useMouse({ type: 'page' })
 const GAP = 50
 const RAD = 3
 
-const WAVE_LENGTH = 300
+const WAVE_LENGTH = 700
 const WAVE_SPEED = 0.1
-const WAVE_WEIGHT = 1.2 // the wave will multiply RAD in the range 1 -> WAVE_WEIGHT
+const WAVE_WEIGHT = 1.25 // the wave will multiply dot size in the range 1 -> WAVE_WEIGHT
 
-const MOUSE_WEIGHT = 2 // the mouse will multiply RAD in the range 1 -> MOUSE_WEIGHT
+const MOUSE_WEIGHT = 2 // the mouse will multiply dot size in the range 1 -> MOUSE_WEIGHT
 const MOUSE_RANGE = 400
 
 function smoothstep(k: number) {
