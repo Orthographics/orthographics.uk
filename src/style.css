@@ -19,3 +19,7 @@ html::-webkit-scrollbar {
 html::-webkit-scrollbar-thumb {
     background-color: #6a4692;
 }
+
+a {
+    @apply underline text-orthopurple hover:text-[#815FA6];
+}
