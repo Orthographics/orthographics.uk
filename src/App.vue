@@ -7,7 +7,9 @@
         <Background />
         <div class="lg:w-[1000px] w-full mx-auto pt-[150px]">
             <div>
-                <h1 class="font-display text-center leading-tight font-regular">
+                <h1
+                    class="font-display text-center leading-tight font-regular mx-4"
+                >
                     <span class="lg:text-[38pt] text-[28pt]">
                         Complete
                         <span class="text-orthopurple"
@@ -21,9 +23,9 @@
                 </h1>
 
                 <h1
-                    class="text-center lg:text-3xl text-2xl font-display mt-12 font-regular"
+                    class="text-center lg:text-3xl text-2xl font-display mt-12 mx-4 font-regular"
                 >
-                    Stream Overlays
+                    Streamer Overlays
                     <span class="text-orthopurple">•</span>
                     Esports Tournaments
                     <span class="text-orthopurple">•</span>
@@ -37,7 +39,7 @@
 
     <div class="lg:w-[1000px] w-full mx-auto px-4">
         <div
-            class="w-full flex flex-wrap justify-between items-stretch mt-[30px] gap-8"
+            class="w-full flex flex-wrap justify-between items-stretch mt-[50px] gap-8"
         >
             <div
                 v-for="feature in features"
@@ -67,11 +69,185 @@
             </div>
 
             <h1
-                class="font-display text-center w-full text-3xl font-medium my-2"
+                class="font-display text-center w-full text-3xl font-medium my-3"
             >
-                Need something even more custom? Get in contact and we'll see
-                how we can help.
+                Need something even more custom? Get in
+                <a href="#contact">contact</a> and we'll see how we can help.
             </h1>
+        </div>
+
+        <h1
+            class="w-full font-display border-b-2 border-orthopurple text-2xl font-semibold mt-4"
+            id="who-are-we"
+        >
+            WHO WE ARE
+        </h1>
+
+        <p class="w-full font-body text-xl my-2">
+            We have over 10 years combined experience in software and live
+            broadcast. We know what it takes to run a high-quality production
+            and what you expect from your tools.
+        </p>
+
+        <div class="flex flex-wrap justify-around gap-5">
+            <div class="basis-[400px] p-4 grow">
+                <div
+                    class="rounded-full overflow-hidden m-auto max-w-[250px] border-orthopurple border-opacity-70 border-2"
+                >
+                    <img class="" src="./assets/dan.jpg" />
+                </div>
+                <h1 class="font-display text-2xl text-center mt-4">
+                    Daniel Shields
+                </h1>
+                <h2 class="font-display text-lg text-center mb-4">
+                    <a href="mailto:daniel@orthographics.uk"
+                        >daniel@orthographics.uk</a
+                    >
+                </h2>
+                <p class="font-body text-lg">
+                    Daniel started his career broadcasting university esports
+                    and steadily grew to providing graphics software to major
+                    production companies around the world.
+                </p>
+                <p class="font-body text-lg"></p>
+            </div>
+            <div class="basis-[400px] p-4 grow">
+                <div
+                    class="rounded-full overflow-hidden m-auto max-w-[250px] border-orthopurple border-opacity-70 border-2"
+                >
+                    <img
+                        class="scale-150 grayscale-[20%]"
+                        src="./assets/tom.jpg"
+                    />
+                </div>
+                <h1 class="font-display text-2xl text-center mt-4">
+                    Tom Mewett
+                </h1>
+                <h2 class="font-display text-lg text-center mb-4">
+                    <a href="mailto:tom@orthographics.uk"
+                        >tom@orthographics.uk</a
+                    >
+                </h2>
+                <p class="font-body text-lg">
+                    Tom is a software engineer who brings a wide range of
+                    experience from working at PlayStation, Bloomberg, and
+                    Raspberry Pi - particularly in backend data systems and user
+                    experience.
+                </p>
+            </div>
+        </div>
+
+        <h3
+            class="text-center text-2xl mt-8 font-display uppercase font-medium"
+        >
+            Previous Clients
+        </h3>
+        <div class="flex flex-wrap gap-x-8 justify-center w-full my-4">
+            <div class="h-[80px] w-[130px] relative">
+                <img
+                    src="./assets/clients/dock10.png"
+                    alt="dock10"
+                    class="absolute top-1/2 -translate-y-1/2 max-h-full max-w-full"
+                />
+            </div>
+            <div class="h-[80px] w-[130px] relative">
+                <img
+                    src="./assets/clients/esl.svg"
+                    alt="ESL"
+                    class="absolute top-1/2 -translate-y-1/2 h-full max-w-full"
+                />
+            </div>
+            <div class="h-[80px] w-[130px] relative">
+                <img
+                    src="./assets/clients/twitch.svg"
+                    alt="Twitch"
+                    class="absolute top-1/2 -translate-y-1/2 max-h-full w-full"
+                />
+            </div>
+
+            <div class="h-[80px] w-[130px] relative">
+                <img
+                    src="./assets/clients/mclaren-shadow.png"
+                    alt="McLaren Shadow"
+                    class="absolute top-1/2 -translate-y-1/2 max-h-full max-w-full"
+                />
+            </div>
+            <div class="h-[80px] w-[130px] relative">
+                <img
+                    src="./assets/clients/redbull.png"
+                    alt="Red Bull"
+                    class="absolute top-1/2 -translate-y-1/2 max-h-full max-w-full"
+                />
+            </div>
+            <div class="h-[80px] w-[130px] relative">
+                <img
+                    src="./assets/clients/faceit-full.svg"
+                    alt="FACEIT"
+                    class="absolute top-1/2 -translate-y-1/2 max-h-full w-full"
+                />
+            </div>
+        </div>
+
+        <h1
+            class="w-full font-display border-b-2 border-orthopurple text-2xl font-semibold mt-8"
+            id="contact"
+        >
+            GET IN TOUCH
+        </h1>
+
+        <p></p>
+
+        <div class="flex flex-wrap justify-evenly my-12">
+            <div>
+                <h1 class="font-display text-3xl text-center mt-2">
+                    <a href="mailto:hello@orthographics.uk">
+                        <img
+                            src="./assets/email.svg"
+                            class="w-64 m-auto mb-8"
+                        />
+                        hello@orthographics.uk
+                    </a>
+                </h1>
+            </div>
+
+            <form class="max-w-xl grid grid-cols-1 space-y-2" ref="form">
+                <label for="name" class="block">
+                    <span class="font-display">Name</span>
+                    <input
+                        class="font-body font-thin w-full mt-1 rounded-md border-orthopurple border-opacity-25 focus:ring focus:border-opacity-0 focus:border-orthopurple focus:ring-orthopurple focus:ring-opacity-50"
+                        type="text"
+                        name="name"
+                        id="name"
+                        required
+                    />
+                </label>
+                <label for="email" class="block">
+                    <span class="font-display">Email</span>
+                    <input
+                        class="font-body font-thin w-full mt-1 rounded-md border-orthopurple border-opacity-25 focus:ring focus:border-opacity-0 focus:border-orthopurple focus:ring-orthopurple focus:ring-opacity-50"
+                        type="email"
+                        name="email"
+                        id="email"
+                        required
+                    />
+                </label>
+                <label for="name" class="block">
+                    <span class="font-display">Message</span>
+                    <textarea
+                        class="font-body font-thin w-full mt-1 rounded-md border-orthopurple border-opacity-25 focus:ring focus:border-opacity-0 focus:border-orthopurple focus:ring-orthopurple focus:ring-opacity-50"
+                        type="textarea"
+                        rows="4"
+                        name="message"
+                        id="message"
+                        required
+                    />
+                </label>
+                <input
+                    type="submit"
+                    class="cursor-pointer border-orthopurple border-2 bg-orthopurple bg-opacity-30 font-display w-32 text-2xl rounded-md"
+                />
+                <OrthoButton>SUBMIT</OrthoButton>
+            </form>
         </div>
     </div>
 </template>
@@ -80,12 +256,14 @@
 import Background from './components/Background.vue'
 import Header from './components/Header.vue'
 import FeatureImages from './assets/features'
+import { onMounted, ref } from 'vue'
+import OrthoButton from './components/OrthoButton.vue'
 
 const features = [
     {
         img: 'Control',
         title: 'Control',
-        desc: 'Customised web control panels allow operators and producers to instantly respond to what’s happening on or off-screen. We can integrate with any API for live real-world data.',
+        desc: "Customised web control panels allow operators and producers to instantly respond to what's happening on or off-screen. Automatically react to live real-world data via integration with any API.",
     },
     {
         img: 'Play',
@@ -94,23 +272,34 @@ const features = [
     },
     {
         img: 'Chat',
-        title: 'Audience participation',
+        title: 'Audience Engagement',
         desc: 'Display live polls, votes, and reactions from livestream chat or social media. Easily select and highlight specific comments or viewer/hashtag counts.',
     },
     {
-        img: 'Control',
+        img: 'State',
         title: 'State Management',
-        desc: 'Our data management system handles event state for game shows, tournaments, elections, and more. A makes your production consistent and responsive.',
+        desc: 'Our data system manages your event state and keeps your production consistent and responsive. It handles game shows, tournaments, elections, and more.',
     },
     {
-        img: 'Control',
+        img: 'Esports',
         title: 'Esports Game Integration',
-        desc: 'Track in-game statistics and display engaging summaries, HUDs, and custom minimaps.',
+        desc: 'Track in-game stats and display engaging pop-ups, HUDs, and custom minimaps.',
     },
     {
-        img: 'Control',
+        img: 'Unreal',
         title: 'Virtual studio and AR',
         desc: 'We develop immersive virtual environments, camera-tracked AR overlays, and studio integrations using Unreal Engine.',
     },
 ]
+
+const form = ref<HTMLFormElement>()
+
+onMounted(() => {
+    if (!form.value) return
+    form.value.onsubmit = (e) => {
+        e.preventDefault()
+
+        console.log(e)
+    }
+})
 </script>
