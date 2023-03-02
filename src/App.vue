@@ -227,9 +227,10 @@
                 ref="form"
             >
                 <div
-                    class="z-20 absolute px-4 w-full h-full max-[769px]:pt-4 group transition-[-webkit-filter,filter,opacity] ease-in-out duration-1000"
+                    class="absolute px-4 w-full h-full max-[769px]:pt-4 group transition-[-webkit-filter,filter,opacity] ease-in-out duration-1000"
                     :class="{
                         '-z-[100]': !formSubmitted,
+                        'z-20': formSubmitted,
                         'opacity-0': !formSubmitted,
                         'backdrop-blur-[4px]': formSubmitted,
                     }"
