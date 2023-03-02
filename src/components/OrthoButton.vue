@@ -1,5 +1,7 @@
 <template>
-    <div class="w-full h-[100px] relative group cursor-pointer -translate-y-2">
+    <button
+        class="w-full h-[100px] relative group cursor-pointer -translate-y-2"
+    >
         <div
             class="scale-50 top-1/2 -translate-y-[calc(50%+7px)] translate-x-[4px] absolute h-[100px] w-full"
         >
@@ -17,5 +19,5 @@
         >
             <slot />
         </h1>
-    </div>
+    </button>
 </template>

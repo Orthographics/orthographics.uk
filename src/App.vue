@@ -227,29 +227,32 @@
                 ref="form"
             >
                 <div
-                    class="z-20 absolute px-4 w-full h-full max-[769px]:pt-4 group transition-opacity hidden opacity-0"
+                    class="z-20 absolute px-4 w-full h-full max-[769px]:pt-4 group transition-[-webkit-filter,filter,opacity] ease-in-out duration-1000"
+                    :class="{
+                        '-z-[100]': !formSubmitted,
+                        'opacity-0': !formSubmitted,
+                        'backdrop-blur-[4px]': formSubmitted,
+                    }"
                 >
                     <div
-                        class="w-full h-full bg-orthopurple rounded-md bg-opacity-20 border-orthopurple border-2 backdrop-blur-[4px]"
+                        class="w-full h-full bg-orthopurple rounded-md bg-opacity-20 border-orthopurple border-2"
                     >
-                        <div class="">
-                            <img
-                                src="./assets/Tick-back.svg"
-                                class="w-32 m-auto mb-8 absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 group-hover:translate-x-[calc(-50%+2px)] group-hover:translate-y-[calc(-50%-2px)] transition-transform ease-in-out duration-500"
-                            />
-                            <img
-                                src="./assets/Tick-front.svg"
-                                class="w-32 m-auto mb-8 absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                            />
-                            <h1
-                                class="absolute top-1/2 w-full text-center font-display text-3xl p-2 font-medium"
+                        <img
+                            src="./assets/Tick-back.svg"
+                            class="w-32 m-auto mb-8 absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 group-hover:translate-x-[calc(-50%+2px)] group-hover:translate-y-[calc(-50%-2px)] transition-transform ease-in-out duration-500"
+                        />
+                        <img
+                            src="./assets/Tick-front.svg"
+                            class="w-32 m-auto mb-8 absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                        />
+                        <h1
+                            class="absolute top-1/2 w-[90%] text-center font-display text-3xl p-2 font-medium"
+                        >
+                            Thanks!<br />
+                            <span class="text-2xl"
+                                >We'll get back to you soon.</span
                             >
-                                Thanks!<br />
-                                <span class="text-2xl"
-                                    >We'll get back to you soon.</span
-                                >
-                            </h1>
-                        </div>
+                        </h1>
                     </div>
                 </div>
 
@@ -284,7 +287,7 @@
                         required
                     />
                 </label>
-                <OrthoButton @click="submitContact">SUBMIT</OrthoButton>
+                <OrthoButton type="submit">SUBMIT</OrthoButton>
             </form>
         </div>
     </div>
@@ -299,7 +302,7 @@
 <script setup lang="ts">
 import Background from './components/Background.vue'
 import FeatureImages from './assets/features'
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import OrthoButton from './components/OrthoButton.vue'
 
 const features = [
@@ -339,8 +342,22 @@ const form = ref<HTMLFormElement>()
 
 const formUrl = 'https://submit-form.com/yRU60pgo'
 
+const formSubmitted = ref(false)
+
+onMounted(() => {
+    if (!form.value) return
+
+    form.value.onsubmit = (e) => {
+        if (!form.value) return
+
+        e.preventDefault()
+
+        submitContact()
+    }
+})
+
 function submitContact() {
-    console.log('submit!')
+    console.log('contact submit')
 
     fetch(formUrl, {
         method: 'POST',
@@ -362,9 +379,19 @@ function submitContact() {
             )?.value,
         }),
     })
-        .then((res) => res.json())
+        .then((res) => {
+            if (res.status !== 200) {
+                throw Error(res.status.toString())
+            }
+
+            return res.json()
+        })
         .then((data) => {
             console.log(data)
+            formSubmitted.value = true
+        })
+        .catch((e) => {
+            console.log(`Go response ${e} when trying to POST form`)
         })
 }
 </script>
