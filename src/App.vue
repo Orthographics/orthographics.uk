@@ -17,14 +17,14 @@
                 <h1
                     class="font-display text-center leading-tight font-regular mx-4"
                 >
-                    <span class="lg:text-[38pt] text-[28pt]">
+                    <span class="lg:text-[38pt] sm:text-[32pt] text-[24pt]">
                         Complete
                         <span class="text-orthopurple"
                             >real-time graphics
                         </span>
                         solutions</span
                     >
-                    <span class="lg:text-[36pt] text-[22pt]">
+                    <span class="lg:text-[36pt] sm:text-[26pt] text-[20pt]">
                         <br />for live and offline productions
                     </span>
                 </h1>
@@ -204,24 +204,62 @@
 
         <p></p>
 
-        <div class="flex flex-wrap justify-evenly my-12">
-            <div>
-                <h1 class="font-display text-3xl text-center mt-2">
-                    <a href="mailto:hello@orthographics.uk">
-                        <img
-                            src="./assets/email.svg"
-                            class="w-64 m-auto mb-8"
-                        />
+        <div
+            class="flex flex-wrap justify-evenly my-12 gap-y-8 min-[769px]:divide-x-2 divide-x-0 min-[769px]:divide-y-0 divide-y-2 divide-orthopurple divide-opacity-50"
+        >
+            <div class="group relative w-96 h-80">
+                <a href="mailto:hello@orthographics.uk">
+                    <img
+                        src="./assets/Email-back.svg"
+                        class="w-64 m-auto mb-8 absolute left-1/2 -translate-x-1/2 group-hover:translate-x-[calc(-50%+2px)] group-hover:-translate-y-[2px] transition-transform ease-in-out duration-500"
+                    />
+                    <img
+                        src="./assets/Email-front.svg"
+                        class="w-64 m-auto mb-8 absolute left-1/2 -translate-x-1/2"
+                    />
+                    <h1
+                        class="font-display underline text-3xl text-center absolute left-1/2 -translate-x-1/2 bottom-0 group-hover:text-[#815FA6]"
+                    >
                         hello@orthographics.uk
-                    </a>
-                </h1>
+                    </h1>
+                </a>
             </div>
 
-            <form class="max-w-xl grid grid-cols-1 space-y-2" ref="form">
+            <form
+                class="max-w-xl grid grid-cols-1 space-y-2 px-8 max-[769px]:pt-4 relative"
+                ref="form"
+            >
+                <div
+                    class="z-20 absolute px-4 w-full h-full max-[769px]:pt-4 group transition-opacity hidden opacity-0"
+                >
+                    <div
+                        class="w-full h-full bg-orthopurple rounded-md bg-opacity-20 border-orthopurple border-2 backdrop-blur-[4px]"
+                    >
+                        <div class="">
+                            <img
+                                src="./assets/Tick-back.svg"
+                                class="w-32 m-auto mb-8 absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 group-hover:translate-x-[calc(-50%+2px)] group-hover:translate-y-[calc(-50%-2px)] transition-transform ease-in-out duration-500"
+                            />
+                            <img
+                                src="./assets/Tick-front.svg"
+                                class="w-32 m-auto mb-8 absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                            />
+                            <h1
+                                class="absolute top-1/2 w-full text-center font-display text-3xl p-2 font-medium"
+                            >
+                                Thanks!<br />
+                                <span class="text-2xl"
+                                    >We'll get back to you soon.</span
+                                >
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+
                 <label for="name" class="block">
                     <span class="font-display">Name</span>
                     <input
-                        class="font-body font-thin w-full mt-1 rounded-md border-orthopurple border-opacity-25 focus:ring focus:border-opacity-0 focus:border-orthopurple focus:ring-orthopurple focus:ring-opacity-50"
+                        class="font-body font-thin w-full mt-1 rounded-md border-orthopurple border-opacity-25 focus:ring focus:border-opacity-0 focus:border-orthopurple focus:ring-orthopurple focus:ring-opacity-50 caret-orthopurple"
                         type="text"
                         name="name"
                         id="name"
@@ -231,7 +269,7 @@
                 <label for="email" class="block">
                     <span class="font-display">Email</span>
                     <input
-                        class="font-body font-thin w-full mt-1 rounded-md border-orthopurple border-opacity-25 focus:ring focus:border-opacity-0 focus:border-orthopurple focus:ring-orthopurple focus:ring-opacity-50"
+                        class="font-body font-thin w-full mt-1 rounded-md border-orthopurple border-opacity-25 focus:ring focus:border-opacity-0 focus:border-orthopurple focus:ring-orthopurple focus:ring-opacity-50 caret-orthopurple"
                         type="email"
                         name="email"
                         id="email"
@@ -241,7 +279,7 @@
                 <label for="name" class="block">
                     <span class="font-display">Message</span>
                     <textarea
-                        class="font-body font-thin w-full mt-1 rounded-md border-orthopurple border-opacity-25 focus:ring focus:border-opacity-0 focus:border-orthopurple focus:ring-orthopurple focus:ring-opacity-50"
+                        class="font-body font-thin w-full mt-1 rounded-md border-orthopurple border-opacity-25 focus:ring focus:border-opacity-0 focus:border-orthopurple focus:ring-orthopurple focus:ring-opacity-50 caret-orthopurple"
                         type="textarea"
                         rows="4"
                         name="message"
@@ -249,21 +287,22 @@
                         required
                     />
                 </label>
-                <input
-                    type="submit"
-                    class="cursor-pointer border-orthopurple border-2 bg-orthopurple bg-opacity-30 font-display w-32 text-2xl rounded-md"
-                />
-                <OrthoButton>SUBMIT</OrthoButton>
+                <OrthoButton @click="submitContact">SUBMIT</OrthoButton>
             </form>
         </div>
+    </div>
+
+    <div class="w-full h-[90px] bg-black border-t-orthopurple border-t-4">
+        <h1 class="text-center text-white font-display text-xl pt-8 uppercase">
+            Copyright © 2023 Orthographics Ltd
+        </h1>
     </div>
 </template>
 
 <script setup lang="ts">
 import Background from './components/Background.vue'
-import Header from './components/Header.vue'
 import FeatureImages from './assets/features'
-import { onMounted, ref } from 'vue'
+import { ref } from 'vue'
 import OrthoButton from './components/OrthoButton.vue'
 
 const features = [
@@ -301,12 +340,34 @@ const features = [
 
 const form = ref<HTMLFormElement>()
 
-onMounted(() => {
-    if (!form.value) return
-    form.value.onsubmit = (e) => {
-        e.preventDefault()
+const formUrl = 'https://submit-form.com/yRU60pgo'
 
-        console.log(e)
-    }
-})
+function submitContact() {
+    console.log('submit!')
+
+    fetch(formUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+        },
+        body: JSON.stringify({
+            name: (
+                form.value?.elements?.['name' as any] as HTMLFormElement | null
+            )?.value,
+            email: (
+                form.value?.elements?.['email' as any] as HTMLFormElement | null
+            )?.value,
+            message: (
+                form.value?.elements?.[
+                    'message' as any
+                ] as HTMLFormElement | null
+            )?.value,
+        }),
+    })
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data)
+        })
+}
 </script>
