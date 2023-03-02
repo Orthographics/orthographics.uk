@@ -1,5 +1,12 @@
 <template>
-    <Header />
+    <div
+        class="fixed top-0 left-0 w-full h-[90px] bg-black border-b-orthopurple border-b-4 z-50"
+    >
+        <img
+            src="./assets/header-text.png"
+            class="absolute max-h-[70%] top-1/2 -translate-y-1/2 sm:left-12 left-1/2 sm:-translate-x-0 -translate-x-1/2"
+        />
+    </div>
 
     <div
         class="w-full mt-[90px] pb-[120px] relative border-orthopurple border-opacity-40 border-b-[2px]"
