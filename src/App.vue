@@ -122,10 +122,7 @@
                 <div
                     class="rounded-full overflow-hidden m-auto max-w-[250px] border-orthopurple border-opacity-70 border-2"
                 >
-                    <img
-                        class="scale-[200%] -translate-x-[20px] grayscale-[15%]"
-                        src="./assets/tom.jpg"
-                    />
+                    <img class="grayscale-[15%]" src="./assets/tom.jpg" />
                 </div>
                 <h1 class="font-display text-2xl text-center mt-4">
                     Tom Mewett
