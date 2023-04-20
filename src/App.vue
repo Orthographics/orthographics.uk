@@ -6,15 +6,15 @@
         <div class="sm:w-40 ml-7 justify-between hidden sm:flex">
             <!-- Copyright etn-ccis @ svgrepo.com, MIT license -->
             <a href="https://github.com/Orthographics"
-                ><img src="github.svg" class="h-[40px]"
+                ><img src="./assets/github.svg" class="h-[40px]"
             /></a>
             <!-- Copyright primefaces @ svgrepo.com, MIT license -->
             <a href="https://www.linkedin.com/company/orthographics/"
-                ><img src="linkedin.svg" class="h-[40px]"
+                ><img src="./assets/linkedin.svg" class="h-[40px]"
             /></a>
             <!-- Copyright primefaces @ svgrepo.com, MIT license -->
             <a href="https://twitter.com/OrthographicsUK"
-                ><img src="twitter.svg" class="h-[40px]"
+                ><img src="./assets/twitter.svg" class="h-[40px]"
             /></a>
         </div>
     </div>
