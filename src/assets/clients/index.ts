@@ -1,0 +1,6 @@
+export { default as Dock10 } from './dock10.png'
+export { default as Esl } from './esl.svg'
+export { default as Faceit } from './faceit-full.svg'
+export { default as Mclaren } from './mclaren-shadow.png'
+export { default as Redbull } from './redbull.png'
+export { default as Twitch } from './twitch.svg'

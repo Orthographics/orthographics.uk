@@ -1,0 +1,301 @@
+---
+import MainLayout from '../layouts/MainLayout.astro'
+import Background from '../components/Background.vue'
+import ContactForm from '../components/ContactForm.vue'
+import FeatureImages from '../assets/features'
+
+const features = [
+    {
+        img: 'Control',
+        title: 'Control',
+        desc: "Customised web control panels allow operators and producers to instantly respond to what's happening on or off-screen. Automatically react to live real-world data via integration with any API.",
+    },
+    {
+        img: 'Play',
+        title: 'Graphics',
+        desc: 'With our web-based graphics system, we have flexibility far beyond what you get with off-the-shelf software - anything from simple lower-thirds to complex data visualisations.',
+    },
+    {
+        img: 'Chat',
+        title: 'Audience Engagement',
+        desc: 'Display live polls, votes, and reactions from livestream chat or social media. Easily select and highlight specific comments or viewer/hashtag counts.',
+    },
+    {
+        img: 'State',
+        title: 'State Management',
+        desc: 'Our data system manages your event state and keeps your production consistent and responsive. It handles game shows, tournaments, elections, and more.',
+    },
+    {
+        img: 'Esports',
+        title: 'Esports Game Integration',
+        desc: 'Track in-game stats and display engaging pop-ups, HUDs, and custom minimaps.',
+    },
+    {
+        img: 'Unreal',
+        title: 'Virtual studio and AR',
+        desc: 'We develop immersive virtual environments, camera-tracked AR overlays, and studio integrations using Unreal Engine.',
+    },
+]
+
+import headerImg from '../assets/header-text.png'
+import * as SocialImgs from '../assets/socials'
+import dan from '../assets/dan.jpg'
+import tom from '../assets/tom.jpg'
+import * as ClientImgs from '../assets/clients'
+import emailBack from '../assets/Email-back.svg'
+import emailFront from '../assets/Email-front.svg'
+---
+
+<MainLayout>
+    <div
+        class="fixed top-0 left-0 w-full h-[90px] bg-black border-b-orthopurple border-b-4 z-50 px-5 sm:px-14 py-3 flex justify-between items-center flex-col sm:flex-row"
+    >
+        <img src={headerImg.src} alt="Orthographics Logo" class="h-[60px]" />
+        <div class="sm:w-40 ml-7 justify-between hidden sm:flex">
+            <!-- Copyright etn-ccis @ svgrepo.com, MIT license -->
+            <a href="https://github.com/Orthographics"
+                ><img src={SocialImgs.Github.src} class="h-[40px]" /></a
+            >
+            <!-- Copyright primefaces @ svgrepo.com, MIT license -->
+            <a href="https://www.linkedin.com/company/orthographics/"
+                ><img src={SocialImgs.Linkedin.src} class="h-[40px]" /></a
+            >
+            <!-- Copyright primefaces @ svgrepo.com, MIT license -->
+            <a href="https://twitter.com/OrthographicsUK"
+                ><img src={SocialImgs.Twitter.src} class="h-[40px]" /></a
+            >
+        </div>
+    </div>
+
+    <div
+        class="w-full mt-[90px] pb-[120px] relative border-orthopurple border-opacity-40 border-b-[2px]"
+    >
+        <Background client:only />
+        <div class="lg:w-[1000px] w-full mx-auto pt-[150px]">
+            <div>
+                <h1
+                    class="font-display text-center leading-tight font-regular mx-4"
+                >
+                    <span class="lg:text-[38pt] sm:text-[32pt] text-[24pt]">
+                        Complete
+                        <span class="text-orthopurple">
+                            real-time graphics
+                        </span>
+                         solutions</span
+                    >
+                    <span class="lg:text-[36pt] sm:text-[26pt] text-[20pt]">
+                        <br />for live and offline productions
+                    </span>
+                </h1>
+
+                <h1
+                    class="text-center lg:text-3xl text-2xl font-display mt-12 mx-4 font-regular"
+                >
+                    Streamer Overlays
+                    <span class="text-orthopurple">•</span>
+                     Esports Tournaments
+                    <span class="text-orthopurple">•</span>
+                     Game Shows
+                    <span class="text-orthopurple">•</span>
+                     Live TV
+                </h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="lg:w-[1000px] w-full mx-auto px-4">
+        <div
+            class="w-full flex flex-wrap justify-between items-stretch mt-[50px] gap-8"
+        >
+            {
+                features.map((feature) => (
+                    <div class="flex justify-between gap-5 group basis-[450px] grow">
+                        <div class="shrink-0 w-[100px]">
+                            <div class="w-full h-[100px] aspect-square relative p-1">
+                                <img
+                                    class="absolute top-1/2 -translate-y-1/2 z-10"
+                                    src={
+                                        (FeatureImages as any)[
+                                            `${feature.img}Front`
+                                        ].src
+                                    }
+                                />
+                                <img
+                                    class="absolute top-1/2 group-hover:translate-x-[2px] group-hover:translate-y-[calc(-50%-2px)] -translate-y-1/2 transition-transform ease-in-out duration-500"
+                                    src={
+                                        (FeatureImages as any)[
+                                            `${feature.img}Back`
+                                        ].src
+                                    }
+                                />
+                            </div>
+                        </div>
+                        <div>
+                            <h1 class="font-display text-2xl uppercase font-semibold mt-2">
+                                {feature.title}
+                            </h1>
+                            <p class="font-body text-[1.2rem]">
+                                {feature.desc}
+                            </p>
+                        </div>
+                    </div>
+                ))
+            }
+
+            <h1
+                class="font-display text-center w-full text-3xl font-medium my-3"
+            >
+                Need something even more custom? Get in
+                <a href="#contact">contact</a> and we'll see how we can help.
+            </h1>
+        </div>
+
+        <h1
+            class="w-full font-display border-b-2 border-orthopurple text-2xl font-semibold mt-4"
+            id="who-are-we"
+        >
+            WHO WE ARE
+        </h1>
+
+        <p class="w-full font-body text-xl my-2">
+            We have over 10 years combined experience in software and live
+            broadcast. We know what it takes to run a high-quality production
+            and what you expect from your tools.
+        </p>
+
+        <div class="flex flex-wrap justify-around gap-5">
+            <div class="basis-[400px] p-4 grow">
+                <div
+                    class="rounded-full overflow-hidden m-auto max-w-[250px] border-orthopurple border-opacity-70 border-2"
+                >
+                    <img src={dan.src} />
+                </div>
+                <h1 class="font-display text-2xl text-center mt-4">
+                    Daniel Shields
+                </h1>
+                <h2 class="font-display text-lg text-center mb-4">
+                    <a href="mailto:daniel@orthographics.uk"
+                        >daniel@orthographics.uk</a
+                    >
+                </h2>
+                <p class="font-body text-lg">
+                    Daniel started his career broadcasting university esports
+                    and steadily grew to providing graphics software to major
+                    production companies around the world.
+                </p>
+                <p class="font-body text-lg"></p>
+            </div>
+            <div class="basis-[400px] p-4 grow">
+                <div
+                    class="rounded-full overflow-hidden m-auto max-w-[250px] border-orthopurple border-opacity-70 border-2"
+                >
+                    <img class="grayscale-[15%]" src={tom.src} />
+                </div>
+                <h1 class="font-display text-2xl text-center mt-4">
+                    Tom Mewett
+                </h1>
+                <h2 class="font-display text-lg text-center mb-4">
+                    <a href="mailto:tom@orthographics.uk"
+                        >tom@orthographics.uk</a
+                    >
+                </h2>
+                <p class="font-body text-lg">
+                    Tom is a software engineer who brings a wide range of
+                    experience from working at PlayStation, Bloomberg, and
+                    Raspberry Pi - particularly in backend data systems and user
+                    experience.
+                </p>
+            </div>
+        </div>
+
+        <h3
+            class="text-center text-2xl mt-8 font-display uppercase font-medium"
+        >
+            Previous Clients
+        </h3>
+        <div class="flex flex-wrap gap-x-8 justify-center w-full my-4">
+            <div class="h-[80px] w-[130px] relative">
+                <img
+                    src={ClientImgs.Dock10.src}
+                    alt="dock10"
+                    class="absolute top-1/2 -translate-y-1/2 max-h-full max-w-full"
+                />
+            </div>
+            <div class="h-[80px] w-[130px] relative">
+                <img
+                    src={ClientImgs.Esl.src}
+                    alt="ESL"
+                    class="absolute top-1/2 -translate-y-1/2 h-full max-w-full"
+                />
+            </div>
+            <div class="h-[80px] w-[130px] relative">
+                <img
+                    src={ClientImgs.Twitch.src}
+                    alt="Twitch"
+                    class="absolute top-1/2 -translate-y-1/2 max-h-full w-full"
+                />
+            </div>
+
+            <div class="h-[80px] w-[130px] relative">
+                <img
+                    src={ClientImgs.Mclaren.src}
+                    alt="McLaren Shadow"
+                    class="absolute top-1/2 -translate-y-1/2 max-h-full max-w-full"
+                />
+            </div>
+            <div class="h-[80px] w-[130px] relative">
+                <img
+                    src={ClientImgs.Redbull.src}
+                    alt="Red Bull"
+                    class="absolute top-1/2 -translate-y-1/2 max-h-full max-w-full"
+                />
+            </div>
+            <div class="h-[80px] w-[130px] relative">
+                <img
+                    src={ClientImgs.Faceit.src}
+                    alt="FACEIT"
+                    class="absolute top-1/2 -translate-y-1/2 max-h-full w-full"
+                />
+            </div>
+        </div>
+
+        <h1
+            class="w-full font-display border-b-2 border-orthopurple text-2xl font-semibold mt-8"
+            id="contact"
+        >
+            GET IN TOUCH
+        </h1>
+
+        <p></p>
+
+        <div
+            class="flex flex-wrap justify-evenly my-12 gap-y-8 min-[769px]:divide-x-2 divide-x-0 min-[769px]:divide-y-0 divide-y-2 divide-orthopurple divide-opacity-50"
+        >
+            <div class="group relative w-96 h-80">
+                <a href="mailto:hello@orthographics.uk">
+                    <img
+                        src={emailBack.src}
+                        class="w-64 m-auto mb-8 absolute left-1/2 -translate-x-1/2 group-hover:translate-x-[calc(-50%+2px)] group-hover:-translate-y-[2px] transition-transform ease-in-out duration-500"
+                    />
+                    <img
+                        src={emailFront.src}
+                        class="w-64 m-auto mb-8 absolute left-1/2 -translate-x-1/2"
+                    />
+                    <h1
+                        class="font-display underline text-3xl text-center absolute left-1/2 -translate-x-1/2 bottom-0 group-hover:text-[#815FA6]"
+                    >
+                        hello@orthographics.uk
+                    </h1>
+                </a>
+            </div>
+
+            <ContactForm client:load />
+        </div>
+    </div>
+
+    <div class="w-full h-[90px] bg-black border-t-orthopurple border-t-4">
+        <h1 class="text-center text-white font-display text-xl pt-8 uppercase">
+            Copyright © 2023 Orthographics Ltd
+        </h1>
+    </div>
+</MainLayout>

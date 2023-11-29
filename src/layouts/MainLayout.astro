@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -32,9 +32,32 @@
         <meta name="theme-color" content="#ffffff" />
 
         <title>Orthographics | Real-Time Graphics Solutions</title>
+
+        <style is:global>
+            html::-webkit-scrollbar-track {
+                background-color: #000;
+                margin-top: 86px;
+                border-top-color: rgb(106 70 146);
+                border-top-width: 4px;
+                border-top-style: solid;
+            }
+
+            html::-webkit-scrollbar {
+                width: 8px;
+
+                background-color: #000;
+            }
+
+            html::-webkit-scrollbar-thumb {
+                background-color: #6a4692;
+            }
+
+            a {
+                @apply underline text-orthopurple hover:text-[#815FA6];
+            }
+        </style>
     </head>
     <body>
-        <div id="app"></div>
-        <script type="module" src="/src/main.ts"></script>
+        <div id="app"><slot /></div>
     </body>
 </html>
