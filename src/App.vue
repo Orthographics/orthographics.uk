@@ -1,11 +1,22 @@
 <template>
     <div
-        class="fixed top-0 left-0 w-full h-[90px] bg-black border-b-orthopurple border-b-4 z-50"
+        class="fixed top-0 left-0 w-full bg-black border-b-orthopurple border-b-4 z-50 px-5 sm:px-14 py-3 flex justify-between items-center flex-col sm:flex-row"
     >
-        <img
-            src="./assets/header-text.png"
-            class="absolute max-h-[70%] top-1/2 -translate-y-1/2 sm:left-12 left-1/2 sm:-translate-x-0 -translate-x-1/2"
-        />
+        <img src="./assets/header-text.png" class="h-[60px]" />
+        <div class="sm:w-40 ml-7 justify-between hidden sm:flex">
+            <!-- Copyright etn-ccis @ svgrepo.com, MIT license -->
+            <a href="https://github.com/Orthographics"
+                ><img src="./assets/github.svg" class="h-[40px]"
+            /></a>
+            <!-- Copyright primefaces @ svgrepo.com, MIT license -->
+            <a href="https://www.linkedin.com/company/orthographics/"
+                ><img src="./assets/linkedin.svg" class="h-[40px]"
+            /></a>
+            <!-- Copyright primefaces @ svgrepo.com, MIT license -->
+            <a href="https://twitter.com/OrthographicsUK"
+                ><img src="./assets/twitter.svg" class="h-[40px]"
+            /></a>
+        </div>
     </div>
 
     <div
