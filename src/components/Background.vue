@@ -6,14 +6,13 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import { useMouse, useWindowSize } from '@vueuse/core'
+import { onMounted, ref } from 'vue'
+import { useMouse } from '@vueuse/core'
 
 const canvas = ref<HTMLCanvasElement>()
 let ctx: CanvasRenderingContext2D | null
 
-const { width } = useWindowSize()
-const { x: mouseX, y: mouseY, sourceType } = useMouse({ type: 'page' })
+const { x: mouseX, y: mouseY, sourceType } = useMouse({ type: 'client' })
 
 const GAP = 50
 const RAD = 3
@@ -34,12 +33,14 @@ function draw(ts: DOMHighResTimeStamp) {
     if (!canvas.value) return
 
     canvas.value.width = canvas.value.offsetWidth
-    canvas.value.height = canvas.value.offsetHeight + 50
+    canvas.value.height = canvas.value.offsetHeight
 
     ctx = canvas.value.getContext('2d')
     if (!ctx) return
 
     ctx.fillStyle = '#6a469222'
+
+    const rect = canvas.value.getClientRects()[0]
 
     for (let i = 0; i < canvas.value.height / GAP; i++) {
         const cY = (i + 0.5) * GAP
@@ -50,10 +51,10 @@ function draw(ts: DOMHighResTimeStamp) {
             (WAVE_WEIGHT +
                 (1 - WAVE_WEIGHT) *
                     Math.sin(
-                        ((2 * Math.PI) / WAVE_LENGTH) * (cY - ts * WAVE_SPEED)
+                        ((2 * Math.PI) / WAVE_LENGTH) * (cY - ts * WAVE_SPEED),
                     ))
 
-        for (let j = 0; j < width.value / GAP; j++) {
+        for (let j = 0; j < canvas.value.width / GAP; j++) {
             const cX = (j + 0.5) * GAP
 
             let size = rowSize
@@ -63,12 +64,13 @@ function draw(ts: DOMHighResTimeStamp) {
                 WAVE_WEIGHT +
                 (1 - WAVE_WEIGHT) *
                     Math.sin(
-                        ((2 * Math.PI) / WAVE_LENGTH) * (cX - ts * WAVE_SPEED)
+                        ((2 * Math.PI) / WAVE_LENGTH) * (cX - ts * WAVE_SPEED),
                     )
 
             if (sourceType.value === 'mouse') {
                 const mouseDist = Math.sqrt(
-                    (cX - mouseX.value) ** 2 + (cY - mouseY.value) ** 2
+                    (cX - mouseX.value + rect.left) ** 2 +
+                        (cY - mouseY.value + rect.top) ** 2,
                 )
 
                 // mouse effect
@@ -87,5 +89,7 @@ function draw(ts: DOMHighResTimeStamp) {
     window.requestAnimationFrame(draw)
 }
 
-window.requestAnimationFrame(draw)
+onMounted(() => {
+    window.requestAnimationFrame(draw)
+})
 </script>
