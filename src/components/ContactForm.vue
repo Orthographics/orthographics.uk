@@ -16,11 +16,11 @@
                 class="w-full h-full bg-orthopurple rounded-md bg-opacity-20 border-orthopurple border-2"
             >
                 <img
-                    src="../assets/Tick-back.svg"
+                    :src="TickBack.src"
                     class="w-32 m-auto mb-8 absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 group-hover:translate-x-[calc(-50%+2px)] group-hover:translate-y-[calc(-50%-2px)] transition-transform ease-in-out duration-500"
                 />
                 <img
-                    src="../assets/Tick-front.svg"
+                    :src="TickFront.src"
                     class="w-32 m-auto mb-8 absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2"
                 />
                 <h1
@@ -69,6 +69,9 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+
+import TickBack from '../assets/Tick-back.svg'
+import TickFront from '../assets/Tick-front.svg'
 
 import OrthoButton from '../components/OrthoButton.vue'
 

@@ -7,11 +7,11 @@
         >
             <img
                 class="absolute top-1/2 -translate-y-1/2 z-10"
-                src="../assets/Button-front.svg"
+                :src="ButtonFront.src"
             />
             <img
                 class="absolute top-1/2 group-hover:translate-x-[4px] group-hover:translate-y-[calc(-50%-4px)] -translate-y-1/2 transition-transform ease-in-out duration-500"
-                src="../assets/Button-back.svg"
+                :src="ButtonBack.src"
             />
         </div>
         <h1
@@ -21,3 +21,8 @@
         </h1>
     </button>
 </template>
+
+<script setup lang="ts">
+import ButtonFront from '../assets/Button-front.svg'
+import ButtonBack from '../assets/Button-back.svg'
+</script>
